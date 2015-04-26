@@ -18,4 +18,11 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+    
+    public function exemploAction()
+    {
+        $nome = "Zend Framework 2";
+        
+        return new ViewModel(['nome' => $nome]);
+    }
 }
