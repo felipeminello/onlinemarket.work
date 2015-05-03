@@ -16,11 +16,14 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+       return new ViewModel();
     }
     
     public function exemploAction()
     {
+        $exemploService = $this->getServiceLocator()->get('ExemploService');
+        
+        
         $nome = "Zend Framework 2";
         
         return new ViewModel(['nome' => $nome]);

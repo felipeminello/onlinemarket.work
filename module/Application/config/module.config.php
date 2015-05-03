@@ -65,6 +65,38 @@ return array(
         ),
     ),
     'service_manager' => array(
+        /*
+         * Chamado no Module.php
+         * em getServiceConfig()
+         */
+        'invokables' => array(
+            'ExemploService' => 'Application\Service\ExemploService'
+        ),
+        
+        /*
+         * M4 Ex 1
+         */
+        'services' => array(
+            'categories' => array(
+                'barter',
+                'beauty',
+                'clothing',
+                'computer',
+                'entertainment',
+                'free',
+                'garden',
+                'general',
+                'health',
+                'household',
+                'phones',
+                'property',
+                'sporting',
+                'tools',
+                'transportation',
+                'wanted'
+            )
+        ),
+        
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
