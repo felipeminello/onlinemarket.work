@@ -21,7 +21,7 @@ return array(
                     ),
                 ),
             ),
-            
+
             'exemplo' => array(
                 'type' => 'Literal',
                 'options' => array(
@@ -29,6 +29,17 @@ return array(
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'exemplo',
+                    ),
+                ),
+            ),
+            
+            'twig' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route'    => '/twig',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Index',
+                        'action'     => 'twig',
                     ),
                 ),
             ),
@@ -70,7 +81,8 @@ return array(
          * em getServiceConfig()
          */
         'invokables' => array(
-            'ExemploService' => 'Application\Service\ExemploService'
+            'ExemploService' => 'Application\Service\ExemploService',
+            'TwigService' => 'Application\Service\TwigService'
         ),
         
         /*
@@ -142,5 +154,5 @@ return array(
             'routes' => array(
             ),
         ),
-    ),
+    )
 );
