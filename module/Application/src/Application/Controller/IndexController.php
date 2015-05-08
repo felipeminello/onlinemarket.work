@@ -12,9 +12,6 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-use Twig_Extension;
-use Twig_SimpleFilter;
-
 class IndexController extends AbstractActionController
 {
     public function indexAction()
@@ -34,8 +31,9 @@ class IndexController extends AbstractActionController
     
     public function twigAction()
     {
-        
-        $twigService = $this->getServiceLocator()->get('TwigService');
+
+//        return new ViewModel();
+        // $twigService = $this->getServiceLocator()->get('TwigService');
         
 
     }

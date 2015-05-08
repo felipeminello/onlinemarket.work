@@ -25,6 +25,10 @@ class Module
         // handler / callback / metodo: onDispatch()
         // prioridade: 100
         $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'onDispatch'), 100);
+        
+        $ZfcTwigRenderer = $e->getApplication()->getServiceManager()->get('ZfcTwigRenderer');
+        
+//        var_dump($ZfcTwigRenderer);
     }
     
     public function onDispatch(MvcEvent $e)

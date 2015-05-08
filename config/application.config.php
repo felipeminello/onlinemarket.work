@@ -9,6 +9,7 @@ return array(
     'modules' => array(
         'Application',
         'Admin',
+        'ZfcTwig'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
