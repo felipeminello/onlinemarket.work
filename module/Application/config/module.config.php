@@ -32,17 +32,6 @@ return array(
                     ),
                 ),
             ),
-            
-            'twig' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route'    => '/twig',
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
-                        'action'     => 'twig',
-                    ),
-                ),
-            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -82,7 +71,6 @@ return array(
          */
         'invokables' => array(
             'ExemploService' => 'Application\Service\ExemploService',
-            'TwigService' => 'Application\Service\TwigService'
         ),
         
         /*

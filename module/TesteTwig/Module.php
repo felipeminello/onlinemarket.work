@@ -1,5 +1,8 @@
 <?php
-namespace Admin;
+namespace TesteTwig;
+
+use Zend\Mvc\ModuleRouteListener;
+use Zend\Mvc\MvcEvent;
 
 class Module
 {

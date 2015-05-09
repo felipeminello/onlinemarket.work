@@ -28,13 +28,4 @@ class IndexController extends AbstractActionController
     
         return new ViewModel(['nome' => $nome]);
     }
-    
-    public function twigAction()
-    {
-
-//        return new ViewModel();
-        // $twigService = $this->getServiceLocator()->get('TwigService');
-        
-
-    }
 }
