@@ -50,4 +50,4 @@ _notes
 # Composer #
 ######################
 composer.lock
-vendor/bin
+vendor
