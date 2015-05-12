@@ -4,11 +4,18 @@ return array(
         'invokables' => array(
 //            'Market\Controller\Index' => 'Market\Controller\IndexController',
             'market-index-controller' => 'Market\Controller\IndexController',
+            'market-view-controller' => 'Market\Controller\ViewController',
         ),
+        'factories' => array(
+            'market-post-controller' => 'Market\Factory\PostControllerFactory'
+        ),
+        'aliases' => array(
+            'alt' => 'market-view-controller'
+        )
     ),
     'router' => array(
         'routes' => array(
-            'module-name-here' => array(
+            'market' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     // Change this to something specific to your module

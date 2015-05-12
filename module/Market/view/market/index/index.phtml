@@ -1,3 +1,9 @@
 <strong>Module:</strong>        Market &raquo;
 <strong>Controller:</strong>    Skeleton &raquo;
 <strong>Action:</strong>        index
+
+<?php if (isset($this->messages) && count($this->messages)): ?>
+<div class="alert alert-warning" role="alert">
+    <?php echo $this->htmllist($this->messages); ?>
+</div>
+<?php endif ?>

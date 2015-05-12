@@ -10,12 +10,22 @@
 namespace Market\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\Mvc\Controller\Plugin\FlashMessenger;
+use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return array();
+        $flashMessenger = $this->flashMessenger();
+        
+        if ($this->flashMessenger()->hasMessages()) {
+            $messages = $flashMessenger->getMessages();
+        } else {
+            $messages = null;
+        }
+        
+        return new ViewModel(['messages' => $messages]);
     }
 
     public function fooAction()
