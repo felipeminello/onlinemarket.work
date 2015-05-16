@@ -21,7 +21,7 @@ return array(
                     ),
                 ),
             ),
-            
+
             'exemplo' => array(
                 'type' => 'Literal',
                 'options' => array(
@@ -70,7 +70,7 @@ return array(
          * em getServiceConfig()
          */
         'invokables' => array(
-            'ExemploService' => 'Application\Service\ExemploService'
+            'ExemploService' => 'Application\Service\ExemploService',
         ),
         
         /*
@@ -142,5 +142,5 @@ return array(
             'routes' => array(
             ),
         ),
-    ),
+    )
 );

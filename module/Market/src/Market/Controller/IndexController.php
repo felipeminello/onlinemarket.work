@@ -22,7 +22,7 @@ class IndexController extends AbstractActionController
         if ($this->flashMessenger()->hasMessages()) {
             $messages = $flashMessenger->getMessages();
         } else {
-            $messages = null;
+            $messages = array('Welcome to Online Market');
         }
         
         return new ViewModel(['messages' => $messages]);
