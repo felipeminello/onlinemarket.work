@@ -25,7 +25,8 @@ class IndexController extends AbstractActionController
             $messages = array('Welcome to Online Market');
         }
         
-        return new ViewModel(['messages' => $messages]);
+        //return new ViewModel(['messages' => $messages]);
+        return ['messages' => $messages];
     }
 
     public function fooAction()

@@ -3,6 +3,7 @@ namespace Market\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\View\Model\Zend\View\Model;
 /**
  *
  * @author Minello
@@ -17,6 +18,9 @@ class PostController extends AbstractActionController
     }
     
     public function indexAction() {
-        return new ViewModel(['categories' => $this->categories]);
+        $vm = new ViewModel(['categories' => $this->categories]);
+        $vm->setTemplate('market/post/invalid.phtml');
+        
+        return $vm;
     }
 }

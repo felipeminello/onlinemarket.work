@@ -13,7 +13,7 @@ return array(
         'BjyProfiler',
         'ZendDeveloperTools',
         'ZfcTwig',
-        'TesteTwig'
+//        'TesteTwig'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

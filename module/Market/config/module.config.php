@@ -123,6 +123,9 @@ return array(
     'view_manager' => array(
         'template_path_stack' => array(
             'Market' => __DIR__ . '/../view'
-        )
+        ),
+        'template_map' => array(
+            'market/post/index' => __DIR__ . '/../view/market/post/invalid.phtml',
+        ),
     )
 );
