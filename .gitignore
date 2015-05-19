@@ -48,6 +48,6 @@ nbproject
 _notes
 
 # Composer #
-######################
+############
 composer.lock
-vendor
+vendor/

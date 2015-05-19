@@ -25,9 +25,9 @@ return array(
                 )
             ),
             'market' => array(
-                'type' => 'Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route' => '/market',
+                    'route' => '/market[/]',
                     'defaults' => array(
                         'controller' => 'market-index-controller',
                         'action' => 'index'
@@ -37,9 +37,9 @@ return array(
                 'may_terminate' => true,
                 'child_routes' => array(
                     'view' => array(
-                        'type' => 'Literal',
+                        'type' => 'Segment',
                         'options' => array(
-                            'route' => '/view',
+                            'route' => 'view[/]',
                             'defaults' => array(
                                 'controller' => 'market-view-controller',
                                 'action' => 'index'
@@ -50,7 +50,7 @@ return array(
                             'main' => array(
                                 'type' => 'Segment',
                                 'options' => array(
-                                    'route' => '/main[/:category]',
+                                    'route' => 'main[/:category][/]',
                                     'defaults' => array(
                                         'action' => 'index'
                                     )
@@ -59,7 +59,7 @@ return array(
                             'item' => array(
                                 'type' => 'Segment',
                                 'options' => array(
-                                    'route' => '/item[/:itemId]',
+                                    'route' => 'item[/:itemId][/]',
                                     'defaults' => array(
                                         'action' => 'item'
                                     ),
@@ -73,7 +73,7 @@ return array(
                     'post' => array(
                         'type' => 'Segment',
                         'options' => array(
-                            'route' => '/post',
+                            'route' => 'post[/]',
                             'defaults' => array(
                                 'controller' => 'market-post-controller',
                                 'action' => 'index'
