@@ -12,8 +12,9 @@ return array(
         'Search',
         'BjyProfiler',
         'ZendDeveloperTools',
+        'EdpModuleLayouts',
         'ZfcTwig',
-//        'TesteTwig'
+        'TesteTwig'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
