@@ -13,6 +13,8 @@
         "zendframework/zend-developer-tools": "dev-master",
         "bjyoungblood/bjy-profiler": "^1.1",
         "zendframework/zftool" : "dev-master",
-        "zf-commons/zfc-twig" : "dev-master"
+        "zf-commons/zfc-twig" : "dev-master",
+        "acelaya/zf2-acqrcode": "^0.2.0",
+        "evandotpro/edp-module-layouts": "^1.0"
     }
 }

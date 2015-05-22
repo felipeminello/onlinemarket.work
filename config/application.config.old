@@ -8,15 +8,19 @@
 return array(
     'modules' => array(
         'Application',
-        'ZfcTwig'
+        'Market',
+        'Search',
+        'BjyProfiler',
+        'ZendDeveloperTools',
+        'ZfcTwig',
+        'Acelaya\QrCode'
+//        'TesteTwig'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
             './module',
-            './vendor',
+            './vendor'
         ),
-        'config_glob_paths' => array(
-            'config/autoload/{,*.}{global,local}.php',
-        ),
-    ),
+        'config_glob_paths' => array('config/autoload/{,*.}{global,local}.php')
+    )
 );

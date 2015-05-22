@@ -12,14 +12,19 @@ return array(
         'Search',
         'BjyProfiler',
         'ZendDeveloperTools',
+        'EdpModuleLayouts',
         'ZfcTwig',
-//        'TesteTwig'
+        'Acelaya\QrCode',
+        'TesteQRCode',
+        'TesteTwig'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
             './module',
-            './vendor'
+            './vendor',
         ),
-        'config_glob_paths' => array('config/autoload/{,*.}{global,local}.php')
-    )
+        'config_glob_paths' => array(
+            'config/autoload/{,*.}{global,local}.php',
+        ),
+    ),
 );
