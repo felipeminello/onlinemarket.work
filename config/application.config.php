@@ -14,7 +14,8 @@ return array(
         'ZendDeveloperTools',
         'EdpModuleLayouts',
         'ZfcTwig',
-        'TesteTwig'
+        'TesteTwig',
+        'InfanaticaCepModule'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

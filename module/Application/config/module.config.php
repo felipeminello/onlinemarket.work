@@ -32,6 +32,32 @@ return array(
                     ),
                 ),
             ),
+
+            'correios' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/correios[/]',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Correios',
+                        'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'busca' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => 'busca[/]',
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\Correios',
+                                'action' => 'busca'
+                            )
+                        )
+                    )
+                )
+            ),
+            
+            
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -117,7 +143,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Correios' => 'Application\Controller\CorreiosController'
         ),
     ),
     'view_helpers' => array(
@@ -132,13 +159,17 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
-            'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'layout/layout'                 => __DIR__ . '/../view/layout/layout.phtml',
+            'application/index/index'       => __DIR__ . '/../view/application/index/index.phtml',
+            'application/index/correios'    => __DIR__ . '/../view/application/index/correios.phtml',
+            'error/404'                     => __DIR__ . '/../view/error/404.phtml',
+            'error/index'                   => __DIR__ . '/../view/error/index.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+        'strategies' => array(
+            'ViewJsonStrategy',
         ),
     ),
     // Placeholder for console routes

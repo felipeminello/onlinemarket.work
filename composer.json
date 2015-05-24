@@ -14,6 +14,7 @@
         "bjyoungblood/bjy-profiler": "^1.1",
         "zendframework/zftool" : "dev-master",
         "zf-commons/zfc-twig" : "dev-master",
-        "evandotpro/edp-module-layouts": "^1.0"
+        "evandotpro/edp-module-layouts": "^1.0",
+        "infanatica/infanatica-cep-module": "dev-master"
     }
 }

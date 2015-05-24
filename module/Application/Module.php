@@ -6,7 +6,6 @@
  * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
-
 namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
@@ -14,9 +13,10 @@ use Zend\Mvc\MvcEvent;
 
 class Module
 {
+
     public function onBootstrap(MvcEvent $e)
     {
-        $eventManager        = $e->getApplication()->getEventManager();
+        $eventManager = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
         
@@ -24,13 +24,12 @@ class Module
         // context: $this
         // handler / callback / metodo: onDispatch()
         // prioridade: 100
-        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'onDispatch'), 100);
-        
-        $ZfcTwigRenderer = $e->getApplication()->getServiceManager()->get('ZfcTwigRenderer');
-        
-//        var_dump($ZfcTwigRenderer);
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array(
+            $this,
+            'onDispatch'
+        ), 100);
     }
-    
+
     public function onDispatch(MvcEvent $e)
     {
         $sm = $e->getApplication()->getServiceManager();
@@ -39,12 +38,45 @@ class Module
         $vm = $e->getViewModel();
         $vm->setVariable('categories', $categories);
     }
-    
+
     public function getServiceConfig()
     {
+        $arrayUF = array(
+            'AC' => 'Acre',
+            'AL' => 'Alagoas',
+            'AP' => 'Amapá',
+            'AM' => 'Amazonas',
+            'BA' => 'Bahia',
+            'CE' => 'Ceará',
+            'DF' => 'Distrito Federal',
+            'ES' => 'Espírito Santo',
+            'GO' => 'Goiás',
+            'MA' => 'Maranhão',
+            'MT' => 'Mato Grosso',
+            'MS' => 'Mato Grosso do Sul',
+            'MG' => 'Minas Gerais',
+            'PA' => 'Pará',
+            'PB' => 'Paraíba',
+            'PR' => 'Paraná',
+            'PE' => 'Pernambuco',
+            'PI' => 'Piauí',
+            'RJ' => 'Rio de Janeiro',
+            'RN' => 'Rio Grande do Norte',
+            'RS' => 'Rio Grande do Sul',
+            'RO' => 'Rondônia',
+            'RR' => 'Roraima',
+            'SC' => 'Santa Catarina',
+            'SP' => 'São Paulo',
+            'SE' => 'Sergipe',
+            'TO' => 'Tocantins'
+        );
+        
         return array(
             'invokables' => array(
                 'ExemploService' => 'Application\Service\ExemploService'
+            ),
+            'services' => array(
+                'estados' => $arrayUF
             )
         );
     }
@@ -59,9 +91,9 @@ class Module
         return array(
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ),
-            ),
+                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__
+                )
+            )
         );
     }
 }
