@@ -39,6 +39,7 @@ class Module implements AutoloaderProviderInterface
     {
         // You may not need to do this if you're doing it elsewhere in your
         // application
+    	
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
