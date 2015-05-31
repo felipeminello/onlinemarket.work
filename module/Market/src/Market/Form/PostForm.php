@@ -29,11 +29,25 @@ class PostForm extends Form {
 		));
 		
 		$price  = new Element\Number('price');
-		$price->setLabel('Price');
+		$price->setLabel('Price')->setAttributes(array(
+				'required' => 'required'
+		));
 		
 		
-		$submit = new Element\Submit('enviar');
-		$submit->setValue('Enviar');
+//		$submit = new Element\Submit('enviar');
+//		$submit->setValue('Enviar');
+		
+		$submit = array(
+			'name' => 'submit',
+			'type' => 'button',
+			'attributes' => array(
+				'type'  => 'submit',
+				'value' => 'Enviar',
+				'id' => 'submitbutton',
+				'class' => 'btn btn-default',
+			),
+			'options' => array('label' => 'Submit')
+		);
 		
 //		$captcha = new Element\Captcha('captcha');
 //		$captcha->setCaptcha(new Dumb);
@@ -41,6 +55,6 @@ class PostForm extends Form {
 		
 //		$csrf = new Element\Csrf('seguranca');
 		
-		$this->add($category)->add($title)->add($submit)->add($price);
+		$this->add($category)->add($title)->add($price)->add($submit);
 	}
 }

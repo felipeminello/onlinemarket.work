@@ -1,19 +1,23 @@
 {
-    "name": "zendframework/skeleton-application",
-    "description": "Skeleton Application for ZF2",
-    "license": "BSD-3-Clause",
-    "keywords": [
-        "framework",
-        "zf2"
-    ],
-    "homepage": "http://framework.zend.com/",
-    "require": {
-        "php": ">=5.3.3",
-        "zendframework/zendframework": "~2.4",
-        "zendframework/zend-developer-tools": "dev-master",
-        "bjyoungblood/bjy-profiler": "^1.1",
-        "zendframework/zftool" : "dev-master",
-        "zf-commons/zfc-twig" : "dev-master",
-        "evandotpro/edp-module-layouts": "^1.0"
-    }
+	"name" : "zendframework/skeleton-application",
+	"description" : "Skeleton Application for ZF2",
+	"license" : "BSD-3-Clause",
+	"keywords" : [
+		"framework",
+		"zf2"
+	],
+	"homepage" : "http://framework.zend.com/",
+	"require" : {
+		"php" : ">=5.3.3",
+		"zendframework/zendframework" : "~2.4",
+		"zendframework/zend-developer-tools" : "dev-master",
+		"bjyoungblood/bjy-profiler" : "^1.1",
+		"zendframework/zftool" : "dev-master",
+		"zf-commons/zfc-twig" : "dev-master",
+		"evandotpro/edp-module-layouts" : "^1.0",
+		"neilime/zf2-twb-bundle" : "2.*@stable",
+		"neilime/zf2-assets-bundle" : "dev-master",
+		"twbs/bootstrap" : "^3.3",
+		"neilime/lessphp" : "dev-master"
+	}
 }
