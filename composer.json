@@ -15,6 +15,10 @@
         "zendframework/zftool" : "dev-master",
         "zf-commons/zfc-twig" : "dev-master",
         "acelaya/zf2-acqrcode": "^0.2.0",
-        "evandotpro/edp-module-layouts": "^1.0"
+        "evandotpro/edp-module-layouts": "^1.0",
+		"neilime/zf2-twb-bundle" : "2.*@stable",
+		"neilime/zf2-assets-bundle" : "dev-master",
+		"twbs/bootstrap" : "^3.3",
+		"neilime/lessphp" : "dev-master"
     }
 }

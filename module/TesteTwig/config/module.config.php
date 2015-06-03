@@ -14,16 +14,6 @@ return array(
             ),
         ),
     ),
-    'translator' => array(
-        'locale' => 'pt_BR',
-        'translation_file_patterns' => array(
-            array(
-                'type'     => 'gettext',
-                'base_dir' => __DIR__ . '/../language',
-                'pattern'  => '%s.mo',
-            ),
-        ),
-    ),
     'controllers' => array(
         'invokables' => array(
             'TesteTwig\Controller\Index' => 'TesteTwig\Controller\IndexController'

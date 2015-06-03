@@ -28,7 +28,6 @@ class Module
         
         $ZfcTwigRenderer = $e->getApplication()->getServiceManager()->get('ZfcTwigRenderer');
         
-//        var_dump($ZfcTwigRenderer);
     }
     
     public function onDispatch(MvcEvent $e)

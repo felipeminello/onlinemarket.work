@@ -3,6 +3,7 @@
 <html lang="pt">
     <head>
         <meta charset="utf-8">
+        
         <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()
@@ -15,8 +16,6 @@
                         ->prependStylesheet($this->basePath('css/style.css'))
                         ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
                         ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
-//                        ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
-//                        ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
 ?>
 
         <!-- Scripts -->
@@ -24,8 +23,6 @@
 
             ->prependFile('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
             ->prependFile('//code.jquery.com/jquery-1.11.2.min.js')
-//            ->prependFile($this->basePath('js/bootstrap.min.js'))
-//            ->prependFile($this->basePath('js/jquery.min.js'))
             ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
             ->prependFile($this->basePath('js/html5shiv.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
         ; ?>
@@ -46,8 +43,9 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
                         <li><a href="<?php echo $this->url('qrcode') ?>"><?php echo $this->translate('QRCode') ?></a></li>
+                        <li><a href="<?php echo $this->url('market/post') ?>">Post</a></li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </nav>
         <div class="container">
