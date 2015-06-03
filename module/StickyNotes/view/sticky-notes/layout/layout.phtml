@@ -1,0 +1,40 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        
+        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('css/style.css'))
+                        ->prependStylesheet($this->basePath('css/StickyNotes.css'))
+                        ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+                        ->prependStylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+//                        ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+//                        ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+        	->appendFile($this->basePath('js/custom.js'))
+        	->appendFile($this->basePath('js/html5.js'))
+            ->prependFile('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+            ->prependFile('//code.jquery.com/jquery-1.11.2.min.js')
+//            ->prependFile($this->basePath('js/bootstrap.min.js'))
+//            ->prependFile($this->basePath('js/jquery.min.js'))
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath('js/html5shiv.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+        ; ?>
+
+    </head>
+    <body>
+    	<?php echo $this->content; ?>
+    </body>
+</html>
