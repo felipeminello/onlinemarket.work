@@ -9,6 +9,7 @@ Zend Framework 2: Fundamentals New
 - /market/post
 - /market/view/main/{category}
 - /market/view/item/{item_id}
+- /stickynotes
 
 
 ## Módulos
@@ -17,6 +18,7 @@ Zend Framework 2: Fundamentals New
 - Market
 - Search
 - TesteTwig
+- [Big Sticky Notes](https://github.com/bigemployee/Big-Sticky-Notes)
 
 
 ## Dependências
