@@ -29,6 +29,36 @@ class Module implements AutoloaderProviderInterface
             ),
         );
     }
+    
+    public function getServiceConfig() {
+    	$expireDays = array(
+    		'2015-05-21' => '21/05/2015',
+    		'2015-05-22' => '22/05/2015',
+    		'2015-05-23' => '23/05/2015'
+    	);
+    	
+    	$captchaOptions = array(
+    		'imgDir' => sys_get_temp_dir(),
+	   		'imgDelete' => false,
+    		'fontDir' => __DIR__.'/fonts/',
+    		'font' => 'arial.ttf',
+    		'width' => 250,
+    		'height' => 100,
+    		'dotNoiseLevel' => 40,
+    		'lineNoiseLevel' => 3
+        );
+    	
+    	return array(
+    		'invokables' => array(
+    			'ExemploService' => 'Application\Service\ExemploService'
+    		),
+    		'services' => array(
+    			'expire_days' => $expireDays,
+    			'captcha_options' => $captchaOptions
+    		)
+    	);
+    }
+    
 
     public function getConfig()
     {

@@ -23,10 +23,11 @@ class PostFormFilterFactory implements FactoryInterface {
 	public function createService(ServiceLocatorInterface $serviceManager) {
 		$categories = $serviceManager->get('categories');
 		
-		$filer = new PostFormFilter();
-		$filer->setCategories($categories);		
-		$filer->buildFilter();
+		$filter = new PostFormFilter();
+		$filter->setCategories($categories);
+		$filter->setExpireDays($serviceManager->get('expire_days'));
+		$filter->buildFilter();
 		
-		return $filer;
+		return $filter;
 	}
 }

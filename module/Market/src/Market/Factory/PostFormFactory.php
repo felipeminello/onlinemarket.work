@@ -22,9 +22,13 @@ class PostFormFactory implements FactoryInterface {
 	 */
 	public function createService(ServiceLocatorInterface $serviceManager) {
 		$categories = $serviceManager->get('categories');
+		$expireDays = $serviceManager->get('expire_days');
+		$captchaOptions = $serviceManager->get('captcha_options');
 		
 		$form = new PostForm();
 		$form->setCategories($categories);		
+		$form->setExpireDays($expireDays);
+		$form->setCaptchaOptions($captchaOptions);
 		$form->buildForm();
 		$form->setInputFilter($serviceManager->get('market-post-filter'));
 		
