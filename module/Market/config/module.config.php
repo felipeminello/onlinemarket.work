@@ -88,7 +88,20 @@ return array(
 		'factories' => array(
 			'market-post-form' => 'Market\Factory\PostFormFactory',
 			'market-post-filter' => 'Market\Factory\PostFormFilterFactory' 
-		) 
+		),
+		'services' => array(
+			'minhas-opcoes-captcha' => array(
+				'imgdir' => './public/images/captcha',
+				'imgDelete' => true,
+				'imgurl' => '/onlinemarket.work/public/images/captcha',
+				'font' => './data/fonts/arial.ttf',
+				'fontSize' => 50,
+				'height' => 100,
+				'width' => 200,
+				'dotNoiseLevel' => 40,
+				'lineNoiseLevel' => 3
+			)
+		)
 	),
 	'view_manager' => array(
 		'template_path_stack' => array(

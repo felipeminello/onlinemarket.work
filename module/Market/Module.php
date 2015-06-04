@@ -36,7 +36,7 @@ class Module implements AutoloaderProviderInterface
     		'2015-05-22' => '22/05/2015',
     		'2015-05-23' => '23/05/2015'
     	);
-    	
+    	/*
     	$captchaOptions = array(
     		'imgDir' => sys_get_temp_dir(),
 	   		'imgDelete' => false,
@@ -47,14 +47,14 @@ class Module implements AutoloaderProviderInterface
     		'dotNoiseLevel' => 40,
     		'lineNoiseLevel' => 3
         );
-    	
+    	*/
     	return array(
     		'invokables' => array(
     			'ExemploService' => 'Application\Service\ExemploService'
     		),
     		'services' => array(
     			'expire_days' => $expireDays,
-    			'captcha_options' => $captchaOptions
+//    			'captcha_options' => $captchaOptions
     		)
     	);
     }
