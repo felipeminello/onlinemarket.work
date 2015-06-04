@@ -31,6 +31,24 @@ class Module implements AutoloaderProviderInterface
     }
     
     public function getServiceConfig() {
+/*    	$expireDays = array(
+    		array(
+				'label' => '21/05/2015',
+    			'value' => '2015-05-21',
+				'label_attributes' => array('class' => 'radio-inline'),
+    		),
+    		array(
+				'label' => '22/05/2015',
+    			'value' => '2015-05-22',
+				'label_attributes' => array('class' => 'radio-inline'),
+    		),
+    		array(
+    			'label' => '23/05/2015',
+    			'value' => '2015-05-23',
+    			'label_attributes' => array('class' => 'radio-inline'),
+    		),
+    	);
+*/
     	$expireDays = array(
     		'2015-05-21' => '21/05/2015',
     		'2015-05-22' => '22/05/2015',

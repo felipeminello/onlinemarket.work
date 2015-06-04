@@ -12,6 +12,7 @@ class PostForm extends Form {
 
 	public function buildForm() {
 		$this->setAttribute('method', 'POST');
+		$this->setAttribute('enctype', 'multipart/form-data');
 		
 		$category = new Element\Select('category');
 		$category->setLabel('Category')->setValueOptions(array_combine($this->categories, $this->categories));
@@ -24,10 +25,15 @@ class PostForm extends Form {
 			'placeholder' => 'Listing header' 
 		));
 		
-		$photo = new Element\Text('photo_filename');
+/*		$photo = new Element\Text('photo_filename');
 		$photo->setLabel('Photo')
 			  ->setAttribute('maxlength', 1024)
 			  ->setAttribute('placeholder', 'Enter URL of a JPG');
+*/		
+		$photo = new Element\File('photo_filename');
+		$photo->setLabel('Photo')
+			  ->setAttribute('id', 'photo_filename')
+			  ->setAttribute('accept', 'image/*');
 		
 		$price = new Element\Number('price');
 		$price->setLabel('Price')->setAttributes(array(
@@ -36,8 +42,8 @@ class PostForm extends Form {
 		
 		$expires = new Element\Radio('expires');
 		$expires->setLabel('Expires')
+//				->setOption('disable-twb', true)
 				->setAttribute('title', 'The expiration date will be calculated from today')
-				->setAttribute('class', 'expiresButton')
 				->setValueOptions($this->getExpireDays());
 		
 		$city = new Element\Text('cityCode');
@@ -117,6 +123,7 @@ class PostForm extends Form {
  			 ->add($description)
 			 ->add($delCode)
 			 ->add($captcha)
+			 ->add(new Element\Csrf('security'))
 			 ->add($submit);
 	}
 }

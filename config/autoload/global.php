@@ -12,9 +12,9 @@
  */
 
 return array(
-    'zfctwig' => [
-        'environment_options' => [
+    'zfctwig' => array(
+        'environment_options' => array(
            'cache' => __DIR__ . '/../../data/cache/templates',
-        ],
-    ],
+        ),
+    ),
 );

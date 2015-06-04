@@ -110,14 +110,25 @@ return array(
 		'template_map' => array() 
 	),
     'asset_bundle' => array(
+    	'production' => false, // Application environment (Developpement => false)
+    	'lastModifiedTime' => null, // Arbitrary last modified time in production
+    	'cachePath' => '@zfRootPath/public/cache', // Cache directory absolute path
+    	'assetsPath' => '@zfRootPath/public', // Assets directory absolute path (allows you to define relative path for assets config)
+    	'tmpDirPath' => sys_get_temp_dir(), // Temp directory absolute path
+    	'processedDirPath' => '@zfRootPath/data/AssetsBundle/processed', // Processed files directory absolute path
+    	'baseUrl' => '@zfBaseUrl', // Base URL of the application
+    	'cacheUrl' => '@zfBaseUrl/cache/', // Cache directory base url
+    	'mediaExt' => array('jpeg', 'jpg', 'png', 'gif', 'cur', 'ttf', 'eot', 'svg', 'woff'), // Put here all media extensions to be cached
+    	'recursiveSearch' => false, // Allows search for matching assets in required folder and its subfolders
 		'assets' => array(
-			'less' => array('./vendor/twbs/bootstrap/less/bootstrap.less'),
-			'css' => array('css'),
-			'js' => array(
-				'js/jquery.min.js',
-				'js/bootstrap.min.js'
-			),
-			'media' => array('img','fonts')
+			
+			'less' => array('@zfRootPath/vendor/twbs/bootstrap/less/bootstrap.less'),
+//			'css' => array('css'),
+//			'js' => array(
+//				'js/jquery.min.js',
+//				'js/bootstrap.min.js'
+//			),
+//			'media' => array('img','fonts')
          )
      ),
 );

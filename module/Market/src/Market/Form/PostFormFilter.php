@@ -3,6 +3,7 @@ namespace Market\Form;
 
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\Input;
+use Zend\InputFilter\FileInput;
 use Zend\Filter\StripTags;
 use Zend\Filter\StringTrim;
 use Zend\Filter\StringToLower;
@@ -54,15 +55,25 @@ class PostFormFilter extends InputFilter {
 			  ->attach($titleStringLengh);
 		
 		
-		
+/*
 		$photo = new Input('photo_filename');
 		$photo->getFilterChain()
-			  ->attachByName('StripTags')
-			  ->attachByName('StringTrim');
+		->attachByName('StripTags')
+		->attachByName('StringTrim');
 		
 		$photo->getValidatorChain()
-			  ->attachByName('Regex', array('pattern' => '!^(http://)?[a-z0-9./_-]+(jp(e)?g|png)$!i'));
+		->attachByName('Regex', array('pattern' => '!^(http://)?[a-z0-9./_-]+(jp(e)?g|png)$!i'));
 		$photo->setErrorMessage('Photo must be a URL or a valid filename ending with jpg or png');
+*/		
+		$photo = new FileInput('photo_filename');
+		$photo->getValidatorChain()
+			  ->attach(new \Zend\Validator\File\UploadFile());
+		$photo->getFilterChain()
+			  ->attach(new \Zend\Filter\File\RenameUpload(array(
+		         'target'    => __DIR__.'../../../../data/upload/',
+		         'randomize' => true,
+		     )));
+//		$photo->setErrorMessage('Photo must be a URL or a valid filename ending with jpg or png');
 		
 		$price = new Input('price');
 		$price->setAllowEmpty(true);

@@ -2,11 +2,68 @@
 
 <?php
 $this->postForm->prepare();
+$this->postForm->setAttribute('role', 'form');
+$this->postForm->setAttribute('class', null);
 
-echo $this->form()->openTag($this->postForm);
 
-echo $this->formCollection($this->postForm);
+echo $this->form(null,null)->openTag($this->postForm);
 
+?>
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		<?php echo $this->formRow($this->postForm->get('category')); ?>
+	</div>
+	<div class="col-xs-12 col-md-6">
+		<?php echo $this->formRow($this->postForm->get('title')); ?>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		<?php echo $this->formRow($this->postForm->get('price')); ?>
+	</div>
+	<div class="col-xs-12 col-md-6">
+		<?php echo $this->formRow($this->postForm->get('photo_filename')); ?>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		<?php echo $this->formRow($this->postForm->get('expires')); ?>
+	</div>
+	<div class="col-xs-12 col-md-6">
+		<?php echo $this->formRow($this->postForm->get('cityCode')); ?>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-4">
+		<?php echo $this->formRow($this->postForm->get('contact_name')); ?>
+	</div>
+	<div class="col-xs-12 col-md-4">
+		<?php echo $this->formRow($this->postForm->get('contact_phone')); ?>
+	</div>
+	<div class="col-xs-12 col-md-4">
+		<?php echo $this->formRow($this->postForm->get('contact_email')); ?>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<?php echo $this->formRow($this->postForm->get('description')); ?>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<?php echo $this->formRow($this->postForm->get('delete_code')); ?>
+	</div>
+	<div class="col-xs-12">
+		<?php echo $this->formRow($this->postForm->get('captcha')); ?>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<?php echo $this->formRow($this->postForm->get('enviar')); ?>
+	</div>
+</div>
+
+<?php
 echo $this->form()->closeTag();
 
 Zend\Debug\Debug::dump($this->data);
