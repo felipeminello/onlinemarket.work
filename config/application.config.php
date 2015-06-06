@@ -16,7 +16,7 @@ return array(
         'EdpModuleLayouts',
         'ZfcTwig',
         'TesteTwig',
-    	'AssetsBundle',
+//    	'AssetsBundle',
     	'TwbBundle',
     ),
     'module_listener_options' => array(
