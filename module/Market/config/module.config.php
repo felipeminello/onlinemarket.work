@@ -93,7 +93,7 @@ return array(
 			'minhas-opcoes-captcha' => array(
 				'imgdir' => './public/images/captcha',
 				'imgDelete' => true,
-				'imgurl' => '/public/images/captcha',
+				'imgurl' => '/images/captcha',
 				'font' => './data/fonts/arial.ttf',
 				'fontSize' => 50,
 				'height' => 100,
