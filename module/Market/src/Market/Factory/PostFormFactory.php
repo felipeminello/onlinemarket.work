@@ -26,7 +26,7 @@ class PostFormFactory implements FactoryInterface {
 //		$captchaOptions = $serviceManager->get('captcha_options');
 		
 		$form = new PostForm();
-		$form->setCategories($categories);		
+		$form->setCategories($categories);
 		$form->setExpireDays($expireDays);
 		$form->setCaptchaOptions($serviceManager->get('minhas-opcoes-captcha'));
 		$form->buildForm();

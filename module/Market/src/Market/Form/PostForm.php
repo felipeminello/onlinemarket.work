@@ -123,7 +123,6 @@ class PostForm extends Form {
  			 ->add($description)
 			 ->add($delCode)
 			 ->add($captcha)
-			 ->add(new Element\Csrf('security'))
 			 ->add($submit);
 	}
 }
