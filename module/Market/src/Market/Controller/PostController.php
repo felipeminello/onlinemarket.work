@@ -16,6 +16,8 @@ class PostController extends AbstractActionController
     public $categories;
     public $postForm;
     
+    use ListingsTableTrait;
+    
     public function setCategorires(array $categories) {
         $this->categories = $categories;
     }

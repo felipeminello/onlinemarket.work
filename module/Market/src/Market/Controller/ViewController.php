@@ -11,6 +11,8 @@ use Zend\Mvc\Controller\Plugin\FlashMessenger;
  */
 class ViewController extends AbstractActionController
 {
+	use ListingsTableTrait;
+	
     public function indexAction()
     {
         /**
@@ -24,9 +26,14 @@ class ViewController extends AbstractActionController
          * Pega a categoria de uma Rota
          * EX: /onlinemarket.work/public/market/view/main/teste
          */
-        $category = $this->params()->fromRoute('category');
+    	$category = $this->params()->fromRoute('category');
+    	
+    	
+    	
+    	
+    	$listings = $this->listingsTable->getListingsByCategory($category);
         
-        return new ViewModel(['category' => $category]);
+        return new ViewModel(['category' => $category, 'listings' => $listings]);
     }
     
     public function itemAction()
@@ -51,6 +58,8 @@ class ViewController extends AbstractActionController
             return $this->redirect()->toRoute('market');
         }
         
-        return new ViewModel(['itemId' => $itemId]);
+        $item = $this->listingsTable->getListinigById($itemId);
+        
+        return new ViewModel(['itemId' => $itemId, 'item' => $item]);
     }
 }

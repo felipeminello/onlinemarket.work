@@ -2,11 +2,12 @@
 return array(
 	'controllers' => array(
 		'invokables' => array(
-			'market-index-controller' => 'Market\Controller\IndexController',
-			'market-view-controller' => 'Market\Controller\ViewController' 
+			
 		),
 		'factories' => array(
-			'market-post-controller' => 'Market\Factory\PostControllerFactory' 
+			'market-index-controller' => 'Market\Factory\IndexControllerFactory',
+			'market-view-controller' => 'Market\Factory\ViewControllerFactory',
+			'market-post-controller' => 'Market\Factory\PostControllerFactory'
 		),
 		'aliases' => array(
 			'alt' => 'market-view-controller' 
@@ -87,13 +88,14 @@ return array(
 	'service_manager' => array(
 		'factories' => array(
 			'market-post-form' => 'Market\Factory\PostFormFactory',
-			'market-post-filter' => 'Market\Factory\PostFormFilterFactory' 
+			'market-post-filter' => 'Market\Factory\PostFormFilterFactory',
+			'listings-table' => 'Market\Factory\ListingsTableFactory'
 		),
 		'services' => array(
 			'minhas-opcoes-captcha' => array(
 				'imgdir' => './public/images/captcha',
 				'imgDelete' => true,
-				'imgurl' => '/images/captcha',
+				'imgurl' => '/onlinemarket.work/public/images/captcha',
 				'font' => './data/fonts/arial.ttf',
 				'fontSize' => 50,
 				'height' => 100,
