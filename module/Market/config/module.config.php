@@ -95,7 +95,7 @@ return array(
 			'minhas-opcoes-captcha' => array(
 				'imgdir' => './public/images/captcha',
 				'imgDelete' => true,
-				'imgurl' => '/onlinemarket.work/public/images/captcha',
+				'imgurl' => $_SERVER['REDIRECT_BASE'].'images/captcha',
 				'font' => './data/fonts/arial.ttf',
 				'fontSize' => 50,
 				'height' => 100,
