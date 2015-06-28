@@ -14,7 +14,7 @@
 return array(
     'zfctwig' => array(
         'environment_options' => array(
-           'cache' => __DIR__ . '/../../data/cache/templates',
+//           'cache' => __DIR__ . '/../../data/cache/templates',
         ),
     ),
 );

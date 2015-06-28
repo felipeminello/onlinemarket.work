@@ -1,9 +1,13 @@
-<strong>Module:</strong>        Market &raquo;
-<strong>Controller:</strong>    Skeleton &raquo;
-<strong>Action:</strong>        index
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">Online Market</h1>
+	</div>
+</div>
 
 <?php if (isset($this->messages) && count($this->messages)): ?>
 <div class="alert alert-warning" role="alert">
     <?php echo $this->htmllist($this->messages); ?>
 </div>
 <?php endif ?>
+
+<?php echo $this->partial('market/partials/item', ['item' => $this->item])?>

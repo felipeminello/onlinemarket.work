@@ -7,6 +7,12 @@
 		"zf2"
 	],
 	"homepage" : "http://framework.zend.com/",
+	"repositories": [
+	    {
+	        "type": "composer",
+	        "url": "https://packages.zendframework.com/"
+	    }
+	],
 	"require" : {
 		"php" : ">=5.3.3",
 		"zendframework/zendframework" : "~2.4",
@@ -18,6 +24,7 @@
 		"neilime/zf2-twb-bundle" : "2.*@stable",
 		"neilime/zf2-assets-bundle" : "dev-master",
 		"twbs/bootstrap" : "^3.3",
-		"neilime/lessphp" : "dev-master"
+		"neilime/lessphp" : "dev-master",
+		"zendframework/zendservice-recaptcha" : "^2.0"
 	}
 }

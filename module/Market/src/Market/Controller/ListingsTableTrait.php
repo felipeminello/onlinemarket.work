@@ -1,6 +1,8 @@
 <?php
 namespace Market\Controller;
 
+use Market\Model\ListingsTable;
+
 trait ListingsTableTrait {
     protected $listingsTable;	
 	/**
@@ -13,7 +15,7 @@ trait ListingsTableTrait {
 	/**
 	 * @param ListingsTable $listingsTable
 	 */
-	public function setListingsTable($listingsTable) {
+	public function setListingsTable(ListingsTable $listingsTable) {
 		$this->listingsTable = $listingsTable;
 	}
 	

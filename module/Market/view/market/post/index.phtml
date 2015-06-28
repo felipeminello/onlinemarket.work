@@ -6,7 +6,7 @@ $this->postForm->setAttribute('role', 'form');
 $this->postForm->setAttribute('class', null);
 
 
-echo $this->form(null,null)->openTag($this->postForm);
+echo html_entity_decode($this->form(null,null)->openTag($this->postForm));
 
 ?>
 <div class="row">
@@ -62,6 +62,11 @@ echo $this->form(null,null)->openTag($this->postForm);
 		<?php echo $this->formRow($this->postForm->get('enviar')); ?>
 	</div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+	/* $(".data").setMask('date'); */
+});
+</script>
 
 <?php
 echo $this->form()->closeTag();

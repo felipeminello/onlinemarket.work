@@ -5,6 +5,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Market\Form\PostForm;
 use Zend\Http\PhpEnvironment\Request;
+
 use Zend\Form\Form;
 /**
  *
@@ -22,7 +23,7 @@ class PostController extends AbstractActionController
         $this->categories = $categories;
     }
     
-    public function setPostForm(Form $postForm) {
+    public function setPostForm($postForm) {
     	$this->postForm = $postForm;
     }
     
@@ -34,6 +35,11 @@ class PostController extends AbstractActionController
     	    	
     	$data = array_merge_recursive($post, $photo);
     	
+    	$renderer = $this->serviceLocator->get('Zend\View\Renderer\RendererInterface');
+    	$renderer->headScript()->appendFile('/js/meiomask.min.js');
+    	
+//    	$this->getViewHelper('HeadScript')->appendFile('./js/meiomask.min.js');
+    	
         $vm = new ViewModel(['categories' => $this->categories, 'postForm' => $this->postForm, 'data' => $data]);
         $vm->setTemplate('market/post/index.phtml');
         
@@ -41,6 +47,10 @@ class PostController extends AbstractActionController
         	$this->postForm->setData($data);
 
         	if ($this->postForm->isValid()) {
+        		
+        		
+        		$this->listingsTable->addPosting($this->postForm->getData());
+        		
         		$this->flashMessenger()->addMessage('Obrigado por postar');
         		$this->redirect()->toRoute('home');
         	} else {

@@ -23,11 +23,14 @@ class IndexController extends AbstractActionController
         if ($this->flashMessenger()->hasMessages()) {
             $messages = $flashMessenger->getMessages();
         } else {
-            $messages = array('Welcome to Online Market');
+            // $messages = array('Online Market');
+        	$messages = null;
         }
         
+        $itemRecent = $this->listingsTable->getMostRecentListing();
+        
         //return new ViewModel(['messages' => $messages]);
-        return ['messages' => $messages];
+        return ['messages' => $messages, 'item' => $itemRecent];
     }
 
     public function fooAction()

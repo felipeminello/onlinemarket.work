@@ -45,7 +45,14 @@ class PostForm extends Form {
 //				->setOption('disable-twb', true)
 				->setAttribute('title', 'The expiration date will be calculated from today')
 				->setValueOptions($this->getExpireDays());
+		/*
 		
+		$expires = new Element\Text('expires');
+		$expires->setLabel('Expires')
+		//				->setOption('disable-twb', true)
+				->setAttribute('title', 'The expiration date will be calculated from today')
+				->setAttribute('class', 'data');
+		*/
 		$city = new Element\Text('cityCode');
 		$city->setLabel('Nearest City')
 			 ->setAttribute('title', 'Select the city of the item')

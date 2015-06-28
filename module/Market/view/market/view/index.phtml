@@ -11,7 +11,7 @@
 	</thead>
 	<tbody>
 <?php while($item = $this->listings->current()): ?>
-		<tr>
+		<tr style="background-color:<?php echo $this->cycle(['#F9A770', '#FAC769', '#FAAE58'])->next(); ?>">
 			<td><a href="<?php echo $this->url('market/view/item').$item['listings_id']; ?>"><?php echo $this->escapehtml($item['title']); ?></a></td>
 			<td><?php echo $this->escapehtml((float) $item['price']); ?></td>
 			

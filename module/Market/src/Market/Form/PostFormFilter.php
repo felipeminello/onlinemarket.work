@@ -11,7 +11,9 @@ use Zend\I18n\Validator\Alnum;
 use Zend\Validator\StringLength;
 use Zend\Validator\InArray;
 use Zend\Validator\Regex;
+use Zend\Validator\File\MimeType;
 use Market\Form\Filter\Float;
+
 
 
 /**
@@ -70,9 +72,21 @@ class PostFormFilter extends InputFilter {
 			  ->attach(new \Zend\Validator\File\UploadFile());
 		$photo->getFilterChain()
 			  ->attach(new \Zend\Filter\File\RenameUpload(array(
-		         'target'    => __DIR__.'../../../../data/upload/',
+		         'target'    => __DIR__.'/../../../../../data/upload/',
 		         'randomize' => true,
-		     )));
+		      )))
+	  		  ->attach(new MimeType(array(
+	  		  	'messageTemplates' => array(
+	  		  		MimeType::FALSE_TYPE => 'The file is not an allowed type',
+                	MimeType::NOT_DETECTED => 'The file type was not detected',
+                	MimeType::NOT_READABLE => 'The file type was not readable',
+            	),
+	            'options' => array(
+	                'enableHeaderCheck' => true,
+	                'mimeType' => 'image/*'
+	            )
+	        )
+	    ));
 //		$photo->setErrorMessage('Photo must be a URL or a valid filename ending with jpg or png');
 		
 		$price = new Input('price');
