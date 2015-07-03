@@ -39,20 +39,22 @@ class PostForm extends Form {
 		$price->setLabel('Price')->setAttributes(array(
 			'required' => 'required' 
 		));
-		
+/*
 		$expires = new Element\Radio('expires');
 		$expires->setLabel('Expires')
 //				->setOption('disable-twb', true)
 				->setAttribute('title', 'The expiration date will be calculated from today')
 				->setValueOptions($this->getExpireDays());
-		/*
+*/
+
 		
-		$expires = new Element\Text('expires');
-		$expires->setLabel('Expires')
-		//				->setOption('disable-twb', true)
+		$expires = new Element\Radio('expires');
+		$expires->setLabel('Expires day')
+//				->setOption('disable-twb', true)
 				->setAttribute('title', 'The expiration date will be calculated from today')
-				->setAttribute('class', 'data');
-		*/
+				->setAttribute('class', 'data')
+                ->setValueOptions($this->getExpireDays());
+
 		$city = new Element\Text('cityCode');
 		$city->setLabel('Nearest City')
 			 ->setAttribute('title', 'Select the city of the item')

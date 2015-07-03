@@ -50,9 +50,9 @@ class Module implements AutoloaderProviderInterface
     	);
 */
     	$expireDays = array(
-    		'2015-05-21' => '21/05/2015',
-    		'2015-05-22' => '22/05/2015',
-    		'2015-05-23' => '23/05/2015'
+    		1 => '1 day',
+    		2 => '2 days',
+    		3 => '3 days'
     	);
     	/*
     	$captchaOptions = array(

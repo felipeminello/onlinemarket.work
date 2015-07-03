@@ -72,7 +72,7 @@ class PostFormFilter extends InputFilter {
 			  ->attach(new \Zend\Validator\File\UploadFile());
 		$photo->getFilterChain()
 			  ->attach(new \Zend\Filter\File\RenameUpload(array(
-		         'target'    => __DIR__.'/../../../../../data/upload/',
+		         'target'    => './data/upload/',
 		         'randomize' => true,
 		      )))
 	  		  ->attach(new MimeType(array(
