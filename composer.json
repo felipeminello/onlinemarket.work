@@ -25,6 +25,7 @@
 		"neilime/zf2-assets-bundle" : "dev-master",
 		"twbs/bootstrap" : "^3.3",
 		"neilime/lessphp" : "dev-master",
-		"zendframework/zendservice-recaptcha" : "^2.0"
+		"zendframework/zendservice-recaptcha" : "^2.0",
+        "cgm/zf2-file-upload-examples" : ">=1.0.0"
 	}
 }

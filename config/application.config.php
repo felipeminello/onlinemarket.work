@@ -18,6 +18,7 @@ return array(
         'TesteTwig',
 //    	'AssetsBundle',
     	'TwbBundle',
+//      'ZF2FileUploadExamples'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

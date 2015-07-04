@@ -70,6 +70,17 @@ class PostFormFilter extends InputFilter {
 		$photo = new FileInput('photo_filename');
 		$photo->getValidatorChain()
 			  ->attach(new \Zend\Validator\File\UploadFile());
+
+        $photo->getFilterChain()->attachByName(
+            'filerenameupload',
+            array(
+                'target'          => './data/upload/',
+                'overwrite'       => true,
+                'use_upload_name' => true,
+            )
+        );
+
+        /*
 		$photo->getFilterChain()
 			  ->attach(new \Zend\Filter\File\RenameUpload(array(
 		         'target'    => './data/upload/',
@@ -87,6 +98,7 @@ class PostFormFilter extends InputFilter {
 	            )
 	        )
 	    ));
+        */
 //		$photo->setErrorMessage('Photo must be a URL or a valid filename ending with jpg or png');
 		
 		$price = new Input('price');

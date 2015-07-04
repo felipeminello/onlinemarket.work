@@ -44,6 +44,10 @@ class ListingsTable extends TableGateway {
 				$date->add(new \DateInterval('P'.$data['expires'].'D'));
 			}
 		}
+
+        if (isset($data['photo_filename']) && is_array($data['photo_filename'])) {
+            $data['photo_filename'] = $data['photo_filename']['name'];
+        }
 		
 		$data['date_expires'] = $date->format('Y-m-d H:i:s');
 		unset($data['cityCode'], $data['expires'], $data['captcha'], $data['enviar']);

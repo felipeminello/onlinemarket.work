@@ -74,7 +74,7 @@ return array(
 					'post' => array(
 						'type' => 'Segment',
 						'options' => array(
-							'route' => 'post23[/]',
+							'route' => 'post[/]',
 							'defaults' => array(
 								'controller' => 'market-post-controller',
 								'action' => 'index' 
